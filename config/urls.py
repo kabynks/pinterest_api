@@ -23,13 +23,13 @@ from account.views import  *
 from post_category.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("posts", posts_list, name="posts_list"),
-    path("post/<int:pk>/", posts_detail, name="post_detail"),
+    path("posts/", posts_list, name="posts_list"),
+    path("posts/<int:pk>/", posts_detail, name="post_detail"),
     path("users/", user_list, name="user_list"),
     path("users/<int:pk>/", user_detail, name="user_detail"),
     path("comments_list/", posts_comments_list, name="comments_list"),
-    path("comment/<int:pk>/", post_comment, name="post_comment"),
-    path("categories", categories_list, name="categories_list"),
+    path("comments/<int:pk>/", post_comment, name="post_comment"),
+    path("categories/", categories_list, name="categories_list"),
     path("categories/<int:pk>/", categories_detail, name="categories_detail")
 ]
 urlpatterns += static(MEDIA_URL, document_root=MEDIA_ROOT)
